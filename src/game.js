@@ -1,4 +1,4 @@
-window.game = new Phaser.Game(600,600, Phaser.AUTO, 'game-container');
+window.game = new Phaser.Game(450, 700, Phaser.CANVASs, 'game-container');
 
 game.state.add('boot', require('./states/boot.js'));
 game.state.add('load', require('./states/load.js'));

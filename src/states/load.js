@@ -2,6 +2,7 @@ export default {
   preload() {
     game.load.spritesheet('tile', 'images/button.png', 300, 300);
     game.load.spritesheet('select', 'images/select.png', 300, 300);
+    game.load.spritesheet('full', 'images/fullscreen.png', 300, 300);
     this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
   },
 

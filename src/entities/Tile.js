@@ -10,19 +10,25 @@ class Tile extends Phaser.Sprite {
   }
 
   update() {
+    if (this.frame > 8 && this.alive) this.frame = 0
     if (!this.alive) {
-      if (game.gTimer > 0) {
-        this.alpha += 0.1
+      if (game.ui.timers[1] > 0) {
+        this.spawn()
       } else {
         this.alpha += 0.006
       }
-      if (this.alpha > 0.85) {
-        this.alive = true;
-        this.alpha = 1;
-        this.frame = parseInt(Math.random() * 3) * 3;
+      if (this.alpha > 0.7) {
+        this.spawn()
       }
     }
   }
+
+  spawn() {
+    this.alive = true;
+    this.alpha = 1;
+    this.frame = parseInt(Math.random() * 3) * 3;
+  }
+
   destroy() {
     this.frame = 9;
     this.alpha = 0;
